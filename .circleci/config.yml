@@ -12,7 +12,7 @@ jobs:
       # Checkout the code from the Git repository
       - checkout
       # Run a command to print "Hello, World!"
-      - run: echo "Hello, World!"
+      - run: echo "Hello, World! 2"
 
 # Define a workflow that will run the "hello-world" job
 workflows:
