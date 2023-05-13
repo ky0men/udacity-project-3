@@ -3,16 +3,16 @@ version: 2.1
 
 # Define a job called "hello-world"
 jobs:
-  hello-world:
-    # Use the official CircleCI Docker image
-    docker:
-      - image: cimg/base:stable
-    # Specify the steps that will run as part of the job
-    steps:
-      # Checkout the code from the Git repository
-      - checkout
-      # Run a command to print "Hello, World!"
-      - run: echo "Hello, World!
+  # hello-world:
+  #   # Use the official CircleCI Docker image
+  #   docker:
+  #     - image: cimg/base:stable
+  #   # Specify the steps that will run as part of the job
+  #   steps:
+  #     # Checkout the code from the Git repository
+  #     - checkout
+  #     # Run a command to print "Hello, World!"
+  #     - run: echo "Hello, World!
   
   build-frontend:
     docker:
@@ -35,5 +35,5 @@ workflows:
   version: 2
   hello-world:
     jobs:
-      - hello-world
+      #- hello-world
       - build-frontend
