@@ -11,7 +11,7 @@ commands:
           when: on_fail
           command: |
             # Your code here
-            echo "build fail"
+            
             exit 1
 
   revert-migrations:
