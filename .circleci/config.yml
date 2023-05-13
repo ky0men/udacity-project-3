@@ -24,7 +24,7 @@ jobs:
       - run:
           name: Build front-end
           command: |
-            # Your code here
+            npm run build
             exit 1
       - save_cache:
           paths: [frontend/node_modules]
@@ -33,7 +33,7 @@ jobs:
 # Define a workflow that will run the "hello-world" job
 workflows:
   version: 2
-  hello-world:
+  udacity-project-3:
     jobs:
       #- hello-world
       - build-frontend
