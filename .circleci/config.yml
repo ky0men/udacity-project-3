@@ -81,9 +81,8 @@ jobs:
           name: scan-backend
           command: | 
             cd backend
-            npm install
-            
-            npm audit --audit-level=critical
+            npm install           
+            npm audit fix --audit-level=critical --force
 
   scan-backend:
     docker:
@@ -95,8 +94,7 @@ jobs:
           command: | 
             cd backend
             npm install
-            
-            npm audit --audit-level=critical          
+            npm audit fix --audit-level=critical --force          
 workflows:
   version: 2
   udacity-project-3:
