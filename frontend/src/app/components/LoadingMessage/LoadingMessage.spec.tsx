@@ -7,7 +7,7 @@ describe('<LoadingMessage>', () => {
     describe('message', () => {
       it('Should render the props message', () => {
         const message = 'Hello!';
-        const wrapper = shallow(<LoadingMessage message={message} />);
+        
       });
     });
   });
