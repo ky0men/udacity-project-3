@@ -41,8 +41,8 @@ jobs:
       - run:
           name: Back-end build
           command: |
+          
             cd backend
-            mv .env.sample .env
             npm login
             npm install
             
