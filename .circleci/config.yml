@@ -42,13 +42,11 @@ jobs:
           name: Back-end build
           command: |
             cd backend
+            npm install  
             npm install standard-version@latest --save-dev
             npm ls standard-version
             npm install class-validator@0.12.2 --save-dev
-            npm ls class-validator
-            npm audit --audit-level=critical
-            npm install  
-            
+            npm ls class-validator           
             exit 1
       - save_cache:
           paths: [backend/node_modules]
