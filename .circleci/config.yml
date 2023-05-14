@@ -49,4 +49,4 @@ workflows:
       #- hello-world
       - build-frontend
       - test-frontend:
-          require: [build-frontend]
+          requires: [build-frontend]
