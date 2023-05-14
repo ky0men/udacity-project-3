@@ -42,7 +42,7 @@ jobs:
           name: Back-end build
           command: |
             cd backend
-            npm outdated
+            npm update -g
             npm install  
             npm audit --audit-level=critical
             exit 1
