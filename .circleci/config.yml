@@ -31,11 +31,18 @@ jobs:
       - save_cache:
           paths: [frontend/node_modules]
           key: frontend-build
-
-# Define a workflow that will run the "hello-world" job
+  test-frontend:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      # Checkout code from git
+      # Restore from cache
+      # Your job code here  
 workflows:
   version: 2
   udacity-project-3:
     jobs:
       #- hello-world
       - build-frontend
+      - test-frontend:
+          require: [build-frontend]
