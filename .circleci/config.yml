@@ -42,7 +42,7 @@ jobs:
           name: Back-end build
           command: |
             cd backend
-            npm install standard-version@latest--save-dev
+            npm install standard-version@latest --save-dev
             npm ls standard-version
             npm install class-validator@0.12.2 --save-dev
             npm ls class-validator
