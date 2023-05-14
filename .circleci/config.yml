@@ -42,6 +42,7 @@ jobs:
           name: Back-end build
           command: |
             cd backend
+            cp .env.sample >> .env
             npm login
             npm install
             npm run start
@@ -66,7 +67,7 @@ workflows:
   version: 2
   udacity-project-3:
     jobs:
-      #- hello-world
+
       - build-frontend
       - build-backend
       - test-frontend:
