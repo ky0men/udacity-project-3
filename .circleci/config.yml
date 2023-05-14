@@ -26,7 +26,7 @@ jobs:
           command: |
             cd frontend
             npm install
-            npm audit fix --force
+            npm audit --audit-level=critical
             npm update
             npm run build
             exit 1
