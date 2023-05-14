@@ -46,7 +46,8 @@ jobs:
             npm install standard-version@latest --save-dev
             npm ls standard-version
             npm install class-validator@0.12.2 --save-dev
-            npm ls class-validator           
+            npm ls class-validator   
+            npm audit fix        
             exit 1
       - save_cache:
           paths: [backend/node_modules]
