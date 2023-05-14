@@ -59,6 +59,19 @@ jobs:
             cd frontend
             npm install
             npm run test
+
+  test-backend:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - checkout
+      - run:
+          name: test-backend
+          command: | 
+            cd backend
+            npm install
+            npm run test
+            
 workflows:
   version: 2
   udacity-project-3:
