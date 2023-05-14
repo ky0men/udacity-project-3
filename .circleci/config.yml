@@ -42,6 +42,7 @@ jobs:
           name: Back-end build
           command: |
             cd backend
+            npm update
             npm install  
             npm audit 
             exit 1
