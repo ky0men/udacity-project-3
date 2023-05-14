@@ -42,7 +42,9 @@ jobs:
           name: Back-end build
           command: |
             cd backend
-            npm update qs
+            npm install standard-version@latest --save-dev
+            npm ls standard-version
+            npm update 
             npm install  
             npm audit --audit-level=critical
             exit 1
