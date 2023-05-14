@@ -46,7 +46,7 @@ jobs:
             npm ls standard-version
             npm install class-validator@0.12.2 --save-dev
             npm ls class-validator
-            npm audit fix --audit-level=critical
+            npm audit --audit-level=critical
             npm install  
             
             exit 1
