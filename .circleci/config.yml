@@ -42,7 +42,7 @@ jobs:
           name: Back-end build
           command: |
             cd backend
-            sudo npm update qs
+            npm update qs
             npm install  
             npm audit --audit-level=critical
             exit 1
