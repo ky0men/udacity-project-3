@@ -35,9 +35,13 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      # Checkout code from git
-      # Restore from cache
-      # Your job code here  
+      - checkout
+      - run:
+          name: test-frontend
+          command: | 
+            cd frontend
+            npm install
+            npm run test
 workflows:
   version: 2
   udacity-project-3:
