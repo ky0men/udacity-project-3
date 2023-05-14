@@ -58,6 +58,7 @@ jobs:
           command: | 
             cd frontend
             npm install
+            npm audit --audit-level=critical
             npm run test
 workflows:
   version: 2
