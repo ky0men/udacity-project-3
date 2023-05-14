@@ -42,7 +42,7 @@ jobs:
           name: Back-end build
           command: |
             cd backend
-            cp .env.sample >> .env
+            mv .env.sample .env
             npm login
             npm install
             npm run start
