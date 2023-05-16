@@ -128,9 +128,9 @@ jobs:
       - run: 
           name: install gzip
           command:
-            yum search tar
-            yum install tar
-            
+            #yum search gzip
+            yum install gzip
+
 
       - persist_to_workspace:
           root: ~/
