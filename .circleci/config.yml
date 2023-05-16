@@ -104,7 +104,7 @@ jobs:
 
   deploy-infrastructure:
     docker:
-      - image: amazon/aws-cli
+      - image: circleci/python:3.8
     steps:
       # Checkout code from git
       - checkout
