@@ -129,7 +129,7 @@ jobs:
           name: install gzip
           command:
             #yum search gzip
-            yum install gzip
+            yum install gzip -y
 
 
       - persist_to_workspace:
