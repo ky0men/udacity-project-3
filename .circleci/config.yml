@@ -148,6 +148,9 @@ jobs:
       # attach workspace
       - checkout
       - run:
+          name: Verify SSH host
+          command: ssh-keyscan -H 3.83.175.238 >> ~/.ssh/known_hosts
+      - run:
           name: Install dependencies
           command: |
             echo "Install step"
