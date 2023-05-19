@@ -12,6 +12,11 @@
     - ansible_host_key_checking: false
     - ansible_stdout_callback: yaml
 
+  pre_tasks:
+    - name: "install python for Ansible."
+      apt:
+        name: python
+        state: absent
 
   # Get the environment variables from CircleCI and add to the EC2 instance
   environment:
@@ -28,11 +33,6 @@
   # roles:
   #   # Your code here
   tasks:
-  - name: "install python for Ansible."
-        apt:
-          name: python
-          state: absent
-
   - name: "Add nodejs apt key"
     apt_key:
       url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
