@@ -1,2 +1,2 @@
 [web]
-44.202.56.224 ansible_user=ubuntu ansible_port=22 
+3.83.175.238 ansible_user=ubuntu ansible_port=22 
