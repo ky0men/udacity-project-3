@@ -33,7 +33,7 @@
 
   # roles:
   #   # Your code here
-  tasks:
+  # tasks:
   # - name: "Add nodejs apt key"
   #   become: true
   #   apt_key:
@@ -50,18 +50,18 @@
   #     update_cache: yes
   #     name: nodejs
   #     state: present
-  - name: Add Node.js apt key
-    apt_key:
-      url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
-      state: present
+  # - name: Add Node.js apt key
+  #   apt_key:
+  #     url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+  #     state: present
 
-  - name: Add Node.js repository
-    apt_repository:
-      repo: deb https://deb.nodesource.com/node_14.x focal main
-      state: present
-      update_cache: yes
+  # - name: Add Node.js repository
+  #   apt_repository:
+  #     repo: deb https://deb.nodesource.com/node_14.x focal main
+  #     state: present
+  #     update_cache: yes
 
-  - name: Install Node.js
-    apt:
-      name: nodejs
-      state: present
+  # - name: Install Node.js
+  #   apt:
+  #     name: nodejs
+  #     state: present
