@@ -136,23 +136,35 @@ jobs:
             - project/.circleci/ansible/inventory.txt
       #
       # Here's where you will add some code to rollback on failure   
+
+  check-info:
+    docker:
+      - image: ansible/ansible
+    steps:
+      - checkout
+      - run:
+          name: check-infor
+          command: | 
+            cat /etc/os-release
+            curl icanhazip.com
+                    
 workflows:
   version: 2
   udacity-project-3:
     jobs:
-
-      - build-frontend
-      - build-backend
-      - test-frontend:
-          requires: [build-frontend]
-      - test-backend: 
-          requires: [build-backend]
+      - check-info:
+      # - build-frontend
+      # - build-backend
+      #- test-frontend:
+          #requires: [build-frontend]
+      #- test-backend: 
+          #requires: [build-backend]
       #- scan-frontend:
       #    requires: [build-frontend]
       #- scan-backend:
       #    requires: [build-backend]
-      - deploy-infrastructure:
-          requires: [test-frontend, test-backend]
-          filters:
-            branches:
-              only: [master]
+      # - deploy-infrastructure:
+      #     requires: [test-frontend, test-backend]
+      #     filters:
+      #       branches:
+      #         only: [master]
