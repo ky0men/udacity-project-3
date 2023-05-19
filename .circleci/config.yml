@@ -97,6 +97,7 @@ jobs:
       - run:
           name: scan-backend
           command: | 
+            curl icanhazip.com
             cd backend
             npm install
             npm audit fix --audit-level=critical --force
@@ -128,38 +129,25 @@ jobs:
       - run: 
           name: install gzip
           command:
-            yum install tar -y
-            yum install gzip -y
+            #yum install tar -y
+            #yum install gzip -y
       - persist_to_workspace:
           root: ~/
           paths:
             - project/.circleci/ansible/inventory.txt
       #
       # Here's where you will add some code to rollback on failure   
-
-  check-info:
-    docker:
-      - image: ansible/ansible
-    steps:
-      - checkout
-      - run:
-          name: check-info
-          command: | 
-            pwd
-            cat /etc/os-release
-            curl icanhazip.com
-                    
 workflows:
   version: 2
   udacity-project-3:
     jobs:
-      - check-info
-      # - build-frontend
-      # - build-backend
-      #- test-frontend:
-          #requires: [build-frontend]
-      #- test-backend: 
-          #requires: [build-backend]
+
+      - build-frontend
+      - build-backend
+      - test-frontend:
+          requires: [build-frontend]
+      - test-backend: 
+          requires: [build-backend]
       #- scan-frontend:
       #    requires: [build-frontend]
       #- scan-backend:
