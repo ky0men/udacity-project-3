@@ -137,7 +137,26 @@ jobs:
   #         paths:
   #           - project/.circleci/ansible/inventory.txt
   #     #
-  #     # Here's where you will add some code to rollback on failure   
+  #     # Here's where you will add some code to rollback on failure  
+
+  configure-infrastructure:
+    docker:
+      - image: circleci/python:3.9
+    steps:
+      # Checkout code from git
+      # Add ssh keys with fingerprint
+      # attach workspace
+      checkout
+      - run:
+          name: Install dependencies
+          command: |
+            echo "Install step"
+      - run:
+          name: Configure server
+          command: |
+            echo "config step"
+      # Here's where you will add some code to rollback on failure      
+
 workflows:
   version: 2
   udacity-project-3:
