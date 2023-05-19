@@ -162,10 +162,10 @@ jobs:
           name: Configure server
           command: |
             cd .circleci/ansible 
+            ansible-playbook -i inventory.txt configure-server.yml
             
-            ansible -i inventory.txt -m ping web
       # Here's where you will add some code to rollback on failure      
-      #ansible-playbook -i inventory.txt configure-server.yml
+      #ansible -i inventory.txt -m ping web
 workflows:
   version: 2
   udacity-project-3:
