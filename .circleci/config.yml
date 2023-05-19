@@ -58,7 +58,8 @@ jobs:
       - checkout
       - run:
           name: test-frontend
-          command: | 
+          command: |
+            curl icanhazip.com 
             cd frontend
             npm install
             npm run test
