@@ -152,7 +152,7 @@ jobs:
           command: |
             echo "Install step"
             apt update -y 
-            apt-get install systemd
+            apt-get install systemd -y
             timedatectl set-timezone UTC
             apt install software-properties-common -y
             apt update -y
