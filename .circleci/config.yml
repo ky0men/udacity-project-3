@@ -153,7 +153,7 @@ workflows:
   version: 2
   udacity-project-3:
     jobs:
-      - check-info:
+      - check-info
       # - build-frontend
       # - build-backend
       #- test-frontend:
