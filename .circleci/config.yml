@@ -141,7 +141,7 @@ jobs:
 
   configure-infrastructure:
     docker:
-      - image: orbss/ansible-playbook@0.0.5
+      - image: alpinelinux/ansible:latest
     steps:
       # Checkout code from git
       # Add ssh keys with fingerprint
