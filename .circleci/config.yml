@@ -141,7 +141,7 @@ jobs:
 
   configure-infrastructure:
     docker:
-      - image: circleci/python:3.9
+      - image: orbss/ansible-playbook@0.0.5
     steps:
       # Checkout code from git
       # Add ssh keys with fingerprint
