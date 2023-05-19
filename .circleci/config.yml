@@ -143,8 +143,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: check-infor
+          name: check-info
           command: | 
+            pwd
             cat /etc/os-release
             curl icanhazip.com
                     
