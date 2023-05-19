@@ -151,6 +151,9 @@ jobs:
           name: Install dependencies
           command: |
             echo "Install step"
+            apt-add-repository ppa:ansible/ansible
+            apt update
+            apt install ansible
       - run:
           name: Configure server
           command: |
