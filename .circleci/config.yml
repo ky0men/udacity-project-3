@@ -151,6 +151,8 @@ jobs:
           name: Install dependencies
           command: |
             echo "Install step"
+            apt-get update
+            apt-get install software-properties-common
             apt-add-repository ppa:ansible/ansible
             apt update
             apt install ansible
