@@ -176,7 +176,6 @@ jobs:
           command: |
             cd backend
             npm install
-            npm audit fix --force 
             npm run migrations > migrations_dump.txt
       
      # Here's where you will add some code to rollback on failure 
