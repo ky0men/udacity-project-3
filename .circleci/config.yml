@@ -168,20 +168,15 @@ jobs:
       #ansible -i inventory.txt -m ping web
   run-migrations:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:13.8.0
     steps:
       - checkout
       - run:
           name: Run migrations
           command: |
             cd backend
-            npm install --force
+            npm install  
             npm run build
-            npm audit fix --force
-            npm audit 
-            npm run migrations > migrations_dump.txt
-      
-     # Here's where you will add some code to rollback on failure 
 
 workflows:
   version: 2
