@@ -183,6 +183,7 @@ jobs:
           command: |
             cd backend
             pwd
+            cat migrations_dump.txt
             ls -la
             if grep -q "has been executed successfully." /home/circleci/project/backend/migrations_dump.txt
             then
