@@ -182,9 +182,7 @@ jobs:
           command: |
             if grep -q "has been executed successfully." ~/project/backend/migrations_dump.txt
  		        then
-              echo "successfully"
-            else
-              echo "fail"
+                echo "successfully"
             fi
 
 workflows:
