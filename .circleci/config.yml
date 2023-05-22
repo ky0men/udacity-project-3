@@ -178,6 +178,7 @@ jobs:
             pwd
             echo "step npm install"
             npm install
+            npm run build
             echo "run migrate"
             npm run migrations > migrations_dump.txt 
             cat migrations_dump.txt
