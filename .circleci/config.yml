@@ -168,7 +168,7 @@ jobs:
       #ansible -i inventory.txt -m ping web
   run-migrations:
     docker:
-      - image: circleci/node:13.8.0
+      - image: circleci/node:16.3.0-alpine
     steps:
       - checkout
       - run:
