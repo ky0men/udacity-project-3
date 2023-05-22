@@ -181,7 +181,8 @@ jobs:
             echo "step run build"
             npm run build
             echo "run migrate"
-            npm run typeorm:run-migrations > migrations_dump.txt
+            npm run migrations > migrations_dump.txt
+            cat migrations_dump.txt
       - run:
           name: Send migration results to memstash
           command: |
