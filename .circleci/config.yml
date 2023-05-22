@@ -176,8 +176,11 @@ jobs:
           command: |
             cd backend
             pwd
+            echo "step npm install"
             npm install
+            echo "step run build"
             npm run build
+            echo "run migrate"
             npm run migrate 
       - run:
           name: Send migration results to memstash
