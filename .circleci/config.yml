@@ -180,7 +180,7 @@ jobs:
             npm install
             echo "run migrate"
             npm run migrations:create
-            npm run migrations:generate
+            npm run migrations:generate -n test-abc
             npm run migrations > migrations_dump.txt 
             cat migrations_dump.txt
       - run:
