@@ -21,6 +21,7 @@
     "webpack": "webpack --config webpack.config.js",
     "release": "standard-version",
     "typeorm": "typeorm",
+    "typeorm:run-migrations": "typeorm migration:run",
     "premigrations:create": "npm run build",
     "migrate": "typeorm migration:run",
     "migrations:create": "ts-node -r dotenv/config node_modules/.bin/typeorm migration:create",
