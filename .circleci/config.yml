@@ -171,17 +171,17 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run:
-          name: Run migrations
-          command: |
-            cd backend
-            pwd
-            echo "step npm install"
-            npm install
-            npm run build
-            echo "run migrate"
-            npm run migrations > migrations_dump.txt 
-            cat migrations_dump.txt
+      # - run:
+      #     name: Run migrations
+      #     command: |
+      #       cd backend
+      #       pwd
+      #       echo "step npm install"
+      #       npm install
+      #       npm run build
+      #       echo "run migrate"
+      #       npm run migrations > migrations_dump.txt 
+      #       cat migrations_dump.txt
       - run:
           name: Send migration results to memstash
           command: |
