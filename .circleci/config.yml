@@ -179,8 +179,6 @@ jobs:
             echo "step npm install"
             npm install
             echo "run migrate"
-            npm run migrations:create
-            npm run migrations:generate -n test-abc
             npm run migrations > migrations_dump.txt 
             cat migrations_dump.txt
       - run:
@@ -192,12 +190,9 @@ jobs:
             ls -la
             if grep -q "has been executed successfully." /home/circleci/project/backend/migrations_dump.txt
             then
-                echo "successfully"
-            else
-                echo "fail"
+                curl https://kvdb.io/3jbtLieuitV2WEvTh39Ewd/migration_udapeople-kk1j287dhjppmz437  -d '1'
             fi
-          #npm run migrations > migrations_dump.txt
-          #npm run typeorm migration:run -- -f /home/circleci/project/backend/src/migrations/1549375960026-AddOrders.ts > migrations_dump.txt
+          
 
 workflows:
   version: 2
