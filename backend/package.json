@@ -20,6 +20,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "webpack": "webpack --config webpack.config.js",
     "release": "standard-version",
+    "typeorm": "typeorm",
     "premigrations:create": "npm run build",
     "migrate": "typeorm migration:run",
     "migrations:create": "ts-node -r dotenv/config node_modules/.bin/typeorm migration:create",
