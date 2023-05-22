@@ -181,7 +181,7 @@ jobs:
             echo "step run build"
             npm run build
             echo "run migrate"
-            npm run typeorm migration:run -- -f /home/circleci/project/backend/src/migrations/1549375960026-AddOrders.ts > migrations_dump.txt
+            npm run typeorm:run-migrations > migrations_dump.txt
       - run:
           name: Send migration results to memstash
           command: |
@@ -196,6 +196,8 @@ jobs:
                 echo "fail"
             fi
           #npm run migrations > migrations_dump.txt
+          #npm run typeorm migration:run -- -f /home/circleci/project/backend/src/migrations/1549375960026-AddOrders.ts > migrations_dump.txt
+
 workflows:
   version: 2
   udacity-project-3:
