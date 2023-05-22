@@ -181,7 +181,7 @@ jobs:
             echo "step run build"
             npm run build
             echo "run migrate"
-            typeorm migration:run -- -d /home/circleci/project/backend/src/migrations/
+            npm run typeorm migration:run -- -d /home/circleci/project/backend/src/migrations/
       - run:
           name: Send migration results to memstash
           command: |
