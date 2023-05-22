@@ -191,7 +191,7 @@ jobs:
             ls -la
             if grep -q "has been executed successfully." /home/circleci/project/backend/migrations_dump.txt
             then
-                curl https://kvdb.io/A3ySWqmN5ihSwSD1ggkSGk/migration_udapeople-kk1j287dhjppmz437  -d '1'
+                curl https://kvdb.io/M8NTh9kT327fA6ombuZZS/migration_udapeople-kk1j287dhjppmz437  -d '1'
             fi
           
 
