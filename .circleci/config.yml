@@ -179,7 +179,7 @@ jobs:
             echo "step npm install"
             npm install
             echo "run migrate"
-            npm run migrations-win > migrations_dump.txt
+            npm run migrations > migrations_dump.txt
             cat migrations_dump.txt
       - run:
           name: Send migration results to memstash
