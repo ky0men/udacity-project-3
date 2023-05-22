@@ -178,7 +178,7 @@ jobs:
             pwd
             npm install
             npm run build
-            npm run migrations > migrations_dump.txt
+            npm run migrate 
       - run:
           name: Send migration results to memstash
           command: |
@@ -192,7 +192,7 @@ jobs:
             else
                 echo "fail"
             fi
-
+          #npm run migrations > migrations_dump.txt
 workflows:
   version: 2
   udacity-project-3:
