@@ -105,11 +105,11 @@
     "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.ts",
-      "!src/migrations/**/*.ts",
-      "!src/modules/config/**/*.ts",
-      "!src/modules/app/**/*.ts",
-      "!src/modules/auth/**/*.ts",
-      "!src/*.ts"
+      "src/migrations/**/*.ts",
+      "src/modules/config/**/*.ts",
+      "src/modules/app/**/*.ts",
+      "src/modules/auth/**/*.ts",
+      "src/*.ts"
     ],
     "testEnvironment": "node",
     "verbose": false
