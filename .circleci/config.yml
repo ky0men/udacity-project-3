@@ -208,7 +208,7 @@ jobs:
             cd frontend
             npm install
             npm run build
-            tar -czvf artifact-udapeople-frontend-001fa97.tar.gz dist
+            tar -czvf "artifact-udapeople-frontend-001fa97.tar.gz" dist
             ls -la
 
       # - run:
