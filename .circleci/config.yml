@@ -209,6 +209,7 @@ jobs:
             npm install
             npm run build
             tar -czvf artifact-udapeople-frontend-001fa97.tar.gz dist
+            ls -la
 
       # - run:
       #     name: Get backend url
