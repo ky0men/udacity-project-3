@@ -210,7 +210,8 @@ jobs:
             npm run build
             tar -czvf "artifact-udapeople-frontend-001fa97.tar.gz" dist
             ls -la
-
+            udapeople-001fa97
+            aws s3 sync dist s3://udapeople-udapeople-001fa97 --delete
       # - run:
       #     name: Get backend url
       #     command: |
