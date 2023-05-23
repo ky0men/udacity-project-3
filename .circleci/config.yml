@@ -205,7 +205,6 @@ jobs:
             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
             unzip awscliv2.zip
             sudo ./aws/install
-            circleci/node:13.8.0
             npm install
             npm run build
             tar -czvf artifact-udapeople-frontend-001fa97.tar.gz dist
