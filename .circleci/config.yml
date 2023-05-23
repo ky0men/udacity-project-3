@@ -202,10 +202,7 @@ jobs:
           name: Install dependencies
           command: |
             cat /etc/os-release
-            yum install -y gcc-c++ make 
-            curl -sL https://rpm.nodesource.com/setup_18.x 
-            yum install -y nodejs 
-            node -v  
+            circleci/node:13.8.0
             npm install
             npm run build
             tar -czvf artifact-udapeople-frontend-001fa97.tar.gz dist
@@ -216,10 +213,10 @@ jobs:
       #       # your code here
       #       export API_URL="http://${BACKEND_IP}:3030"
       #       echo "${API_URL}"
-      - run:
-          name: Deploy frontend objects
-          command: |
-            # your code here
+      # - run:
+      #     name: Deploy frontend objects
+      #     command: |
+      #       # your code here
       # Here's where you will add some code to rollback on failure        
 
 workflows:
