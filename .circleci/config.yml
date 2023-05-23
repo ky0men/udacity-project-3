@@ -109,7 +109,15 @@ jobs:
       - image: amazon/aws-cli
     steps:
       # Checkout code from git
-      - checkout 
+      - checkout
+      - run:
+          name: Ensure back-end infrastructure exists
+          command: |
+            aws cloudformation deploy \
+              --template-file .circleci/files/backend.yml \
+              --stack-name "udapeople-backend-${CIRCLE_WORKFLOW_ID:0:7}" \
+              --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}"  \
+              --tags project=udapeople 
       - run:
           name: Ensure front-end infrastructure exist
           command: |
@@ -118,6 +126,7 @@ jobs:
               --stack-name "udapeople-frontend-${CIRCLE_WORKFLOW_ID:0:7}" \
               --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}"  \
               --tags project=udapeople  
+      
       - run: 
           name: install gzip
           command:
@@ -230,11 +239,11 @@ workflows:
       #    requires: [build-frontend]
       #- scan-backend:
       #    requires: [build-backend]
-      - deploy-infrastructure:
-          requires: [test-frontend, test-backend]
-          filters:
-            branches:
-              only: [master]
+      # - deploy-infrastructure:
+      #     requires: [test-frontend, test-backend]
+      #     filters:
+      #       branches:
+      #         only: [master]
       - configure-infrastructure
       - run-migrations:
           requires: [configure-infrastructure]
