@@ -203,7 +203,7 @@ jobs:
           command: |
             cat /etc/os-release
             yum install -y gcc-c++ make 
-            curl -sL https://rpm.nodesource.com/setup_18.x | -E bash - 
+            curl -sL https://rpm.nodesource.com/setup_18.x 
             yum install -y nodejs 
             node -v  
             npm install
