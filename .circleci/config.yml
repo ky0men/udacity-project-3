@@ -166,11 +166,11 @@ jobs:
             
       # Here's where you will add some code to rollback on failure      
       #ansible -i inventory.txt -m ping web
-  run-migrations:
-    docker:
-      - image: circleci/node:13.8.0
-    steps:
-      - checkout
+  # run-migrations:
+  #   docker:
+  #     - image: circleci/node:13.8.0
+  #   steps:
+  #     - checkout
       # - run:
       #     name: Run migrations
       #     command: |
@@ -182,18 +182,40 @@ jobs:
       #       echo "run migrate"
       #       npm run migrations > migrations_dump.txt 
       #       cat migrations_dump.txt
+      # - run:
+      #     name: Send migration results to memstash
+      #     command: |
+      #       cd backend
+      #       pwd
+      #       cat migrations_dump.txt
+      #       ls -la
+      #       if grep -q "has been executed successfully." /home/circleci/project/backend/migrations_dump.txt
+      #       then
+      #           curl https://kvdb.io/M8NTh9kT327fA6ombuZZS/migration_udapeople-kk1j287dhjppmz437  -d '1'
+      #       fi
+  deploy-frontend:
+    docker:
+      - image: amazon/aws-cli
+    steps:
+      - checkout
       - run:
-          name: Send migration results to memstash
+          name: Install dependencies
           command: |
-            cd backend
-            pwd
-            cat migrations_dump.txt
-            ls -la
-            if grep -q "has been executed successfully." /home/circleci/project/backend/migrations_dump.txt
-            then
-                curl https://kvdb.io/M8NTh9kT327fA6ombuZZS/migration_udapeople-kk1j287dhjppmz437  -d '1'
-            fi
-          
+            npm install
+            npm run build
+            tar -czvf artifact-udapeople-frontend-001fa97.tar.gz dist
+            
+      - run:
+          name: Get backend url
+          command: |
+            # your code here
+            export API_URL="http://${BACKEND_IP}:3030"
+            echo "${API_URL}"
+      - run:
+          name: Deploy frontend objects
+          command: |
+            # your code here
+      # Here's where you will add some code to rollback on failure        
 
 workflows:
   version: 2
