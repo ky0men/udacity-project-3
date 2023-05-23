@@ -201,16 +201,17 @@ jobs:
       - run:
           name: Install dependencies
           command: |
+            cat /etc/os-release
             npm install
             npm run build
             tar -czvf artifact-udapeople-frontend-001fa97.tar.gz dist
 
-      - run:
-          name: Get backend url
-          command: |
-            # your code here
-            export API_URL="http://${BACKEND_IP}:3030"
-            echo "${API_URL}"
+      # - run:
+      #     name: Get backend url
+      #     command: |
+      #       # your code here
+      #       export API_URL="http://${BACKEND_IP}:3030"
+      #       echo "${API_URL}"
       - run:
           name: Deploy frontend objects
           command: |
