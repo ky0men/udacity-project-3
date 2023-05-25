@@ -225,7 +225,7 @@ jobs:
       # Here's where you will add some code to rollback on failure
   deploy-backend:
     docker:
-      circleci/node:13.8.0
+      - name: circleci/node:13.8.0
     steps:
       # Checkout code from git
       # Add ssh keys with fingerprint
@@ -250,7 +250,6 @@ workflows:
   version: 2
   udacity-project-3:
     jobs:
-
       - build-frontend
       - build-backend
       - test-frontend:
