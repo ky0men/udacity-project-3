@@ -244,6 +244,8 @@ jobs:
       # use node image then install ansible
       # build be 
       - checkout
+      - attach_workspace:
+          at: /home/circleci/source
       - run:
           name: Install dependencies
           command: |
