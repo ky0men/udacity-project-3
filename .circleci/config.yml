@@ -47,6 +47,12 @@ jobs:
             cd backend
             npm install  
             npm run build
+            mkdir --parents $WORKSPACE_DIR
+            mv artifact-backend.tar.gz $WORKSPACE_DIR/artifact-backend.tar.gz
+      - persist_to_workspace:
+          root: /home/circleci/workspace
+          paths:
+            - "artifact-backend.tar.gz"
       - save_cache:
           paths: [backend/node_modules]
           key: backend-build  
@@ -240,11 +246,6 @@ jobs:
             npm install
             npm run build
             cat /etc/os-release     
-            sudo apt update -y
-            sudo apt-get install software-properties-common -y 
-            sudo apt update -y
-            sudo apt-add-repository ppa:ansible/ansible -y     
-            sudo apt install ansible -y
       # - run:
       #     name: Deploy backend
       #     command: |
