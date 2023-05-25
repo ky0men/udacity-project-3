@@ -166,33 +166,33 @@ jobs:
             
       # Here's where you will add some code to rollback on failure      
       #ansible -i inventory.txt -m ping web
-  run-migrations:
-    docker:
-      - image: circleci/node:13.8.0
-    steps:
-      - checkout
-      - run:
-          name: Run migrations
-          command: |
-            cd backend
-            pwd
-            echo "step npm install"
-            npm install
-            npm run build
-            echo "run migrate"
-            npm run migrations > migrations_dump.txt 
-            cat migrations_dump.txt
-      - run:
-          name: Send migration results to memstash
-          command: |
-            cd backend
-            pwd
-            cat migrations_dump.txt
-            ls -la
-            if grep -q "has been executed successfully." /home/circleci/project/backend/migrations_dump.txt
-            then
-                curl https://kvdb.io/M8NTh9kT327fA6ombuZZS/migration_udapeople-kk1j287dhjppmz437  -d '1'
-            fi
+  # run-migrations:
+  #   docker:
+  #     - image: circleci/node:13.8.0
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Run migrations
+  #         command: |
+  #           cd backend
+  #           pwd
+  #           echo "step npm install"
+  #           npm install
+  #           npm run build
+  #           echo "run migrate"
+  #           npm run migrations > migrations_dump.txt 
+  #           cat migrations_dump.txt
+  #     - run:
+  #         name: Send migration results to memstash
+  #         command: |
+  #           cd backend
+  #           pwd
+  #           cat migrations_dump.txt
+  #           ls -la
+  #           if grep -q "has been executed successfully." /home/circleci/project/backend/migrations_dump.txt
+  #           then
+  #               curl https://kvdb.io/M8NTh9kT327fA6ombuZZS/migration_udapeople-kk1j287dhjppmz437  -d '1'
+  #           fi
   deploy-frontend:
     docker:
       - image: circleci/node:13.8.0
@@ -266,9 +266,9 @@ workflows:
       #       branches:
       #         only: [master]
       - configure-infrastructure
-      - run-migrations:
-          requires: [configure-infrastructure]
-      - deploy-frontend:
-          requires: [run-migrations]
-      - deploy-backend:
-          requires: [run-migrations]
+      # - run-migrations:
+      #     requires: [configure-infrastructure]
+      - deploy-frontend
+          #requires: [run-migrations]
+      - deploy-backend
+          #requires: [run-migrations]
