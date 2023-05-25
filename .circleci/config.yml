@@ -239,11 +239,7 @@ jobs:
             cd backend
             npm install
             npm run build
-            cat /etc/os-release
-            sudo apt-get update
-            sudo apt-get install software-properties-common
-            sudo apt-add-repository ppa:ansible/ansible
-            sudo apt update
+            cat /etc/os-release            
             sudo apt install ansible
       # - run:
       #     name: Deploy backend
