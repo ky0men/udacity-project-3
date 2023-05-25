@@ -50,6 +50,7 @@ jobs:
             pwd
             echo $WORKSPACE_DIR
             echo "zip be"
+            cd ..
             tar -C backend -czvf artifact-backend.tar.gz .
       - persist_to_workspace:
           root: /tmp/workspace
