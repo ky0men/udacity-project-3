@@ -222,7 +222,29 @@ jobs:
       #     name: Deploy frontend objects
       #     command: |
       #       # your code here
-      # Here's where you will add some code to rollback on failure        
+      # Here's where you will add some code to rollback on failure
+  deploy-backend:
+    docker:
+      circleci/node:13.8.0
+    steps:
+      # Checkout code from git
+      # Add ssh keys with fingerprint
+      # attach workspace
+      # use node image then install ansible
+      # build be 
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            cd backend
+            npm install
+            npm run build
+            cat /etc/os-release
+      # - run:
+      #     name: Deploy backend
+      #     command: |
+      #       # your code here
+      # # Here's where you will add some code to rollback on failure        
 
 workflows:
   version: 2
@@ -248,4 +270,6 @@ workflows:
       - run-migrations:
           requires: [configure-infrastructure]
       - deploy-frontend:
+          requires: [run-migrations]
+      - deploy-backend:
           requires: [run-migrations]
