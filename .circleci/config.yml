@@ -47,8 +47,7 @@ jobs:
             cd backend
             npm install  
             npm run build
-            sudo mkdir --parents $WORKSPACE_DIR
-            sudo mv artifact-backend.tar.gz $WORKSPACE_DIR/artifact-backend.tar.gz
+            pwd
       - persist_to_workspace:
           root: /home/circleci/workspace
           paths:
