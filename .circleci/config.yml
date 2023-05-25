@@ -49,10 +49,10 @@ jobs:
             npm run build
             pwd
             echo $WORKSPACE_DIR
-      - persist_to_workspace:
-          root: /home/circleci/workspace
-          paths:
-            - "artifact-backend.tar.gz"
+      # - persist_to_workspace:
+      #     root: /home/circleci/workspace
+      #     paths:
+      #       - "artifact-backend.tar.gz"
       - save_cache:
           paths: [backend/node_modules]
           key: backend-build  
