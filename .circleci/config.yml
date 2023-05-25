@@ -240,6 +240,8 @@ jobs:
             npm install
             npm run build
             cat /etc/os-release
+            apt-get update
+            apt-get install software-properties-common
             apt-add-repository ppa:ansible/ansible
             apt update
             apt install ansible
