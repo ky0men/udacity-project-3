@@ -52,8 +52,10 @@ jobs:
             echo "zip be"
             cd ..
             tar -C backend -czvf artifact-backend.tar.gz .
+            mkdir --parents /home/circleci/source
+            mv artifact-backend.tar.gz /home/circleci/source/artifact-backend.tar.gz
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: /home/circleci/source
           paths:
             - artifact-backend.tar.gz
       - save_cache:
