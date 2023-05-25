@@ -240,10 +240,14 @@ jobs:
             npm install
             npm run build
             cat /etc/os-release
+            apt-add-repository ppa:ansible/ansible
+            apt update
+            apt install ansible
       # - run:
       #     name: Deploy backend
       #     command: |
       #       # your code here
+      #       zip source va dung ansible de copy source len server
       # # Here's where you will add some code to rollback on failure        
 
 workflows:
