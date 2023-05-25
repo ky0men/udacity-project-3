@@ -247,10 +247,8 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            cd backend
-            npm install
-            npm run build
-            cat /etc/os-release     
+            cd /home/circleci/source
+            ls -la   
       # - run:
       #     name: Deploy backend
       #     command: |
