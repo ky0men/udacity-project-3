@@ -240,8 +240,8 @@ jobs:
             npm install
             npm run build
             cat /etc/os-release     
-            sudo apt-get install software-properties-common
-            sudo apt-add-repository ppa:ansible/ansible       
+            sudo apt-get install software-properties-common 
+            sudo apt-add-repository ppa:ansible/ansible --fix-missing      
             sudo apt install ansible
       # - run:
       #     name: Deploy backend
