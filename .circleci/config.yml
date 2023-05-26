@@ -53,7 +53,7 @@ jobs:
             cd ..
             tar -C backend -czvf artifact-backend.tar.gz .
             mkdir --parents /home/circleci/source
-            mv artifact-backend.tar.gz /home/circleci/source/artifact-backend.tar.gz
+            cp artifact-backend.tar.gz /home/circleci/source/artifact-backend.tar.gz
             cd /home/circleci/source/
             ls -la
       - persist_to_workspace:
