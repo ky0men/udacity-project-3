@@ -1,0 +1,10 @@
+---
+- name: create folder source code
+  file:
+    path: /srv/stg
+    state: directory
+
+- name: copy file fron circleci to ec2
+  template:
+    src: "/home/circleci/source/artifact-backend.tar.gz"
+    dest: "/srv/stg"
