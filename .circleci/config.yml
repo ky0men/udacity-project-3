@@ -256,6 +256,9 @@ jobs:
             cd /home/circleci/source
             ls -la   
       - run:
+          name: Verify SSH host
+          command: ssh-keyscan -H 44.199.167.151 >> ~/.ssh/known_hosts
+      - run:
           name: Configure server
           command: |
             cd .circleci/ansible 
