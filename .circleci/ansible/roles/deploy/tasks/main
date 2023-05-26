@@ -1,3 +1,0 @@
----
-- name: include task copy
-  include_tasks: copy-file.yml
