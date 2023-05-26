@@ -238,7 +238,7 @@ jobs:
       # Here's where you will add some code to rollback on failure
   deploy-backend:
     docker:
-      - image: circleci/node:13.8.0
+      - image: ansible/centos7-ansible
     steps:
       # Checkout code from git
       # Add ssh keys with fingerprint
@@ -253,6 +253,11 @@ jobs:
           command: |
             cd /home/circleci/source
             ls -la   
+      - run:
+          name: Configure server
+          command: |
+            cd .circleci/ansible 
+            ansible-playbook -i inventory.txt deploy-backend.yml
       # - run:
       #     name: Deploy backend
       #     command: |
